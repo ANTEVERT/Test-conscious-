@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Интерактивный тест на готовность к осознанной жизни</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #0f172a; /* bg-slate-900 */
+      }
+      h1, h2, h3, .font-display {
+        font-family: 'Playfair Display', serif;
+      }
+      @media print {
+        body {
+          background-color: #ffffff !important;
+          color: #000000 !important;
+        }
+        .print-hidden {
+          display: none !important;
+        }
+        main > .relative > div {
+           min-height: auto;
+           padding: 0;
+        }
+        /* Target the main results container */
+        .results-container {
+            max-width: 100% !important;
+            width: 100% !important;
+            background: none !important;
+            backdrop-filter: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 1rem !important;
+            color: #000 !important;
+        }
+        /* Make text readable */
+        .results-container * {
+            color: #000 !important;
+            border-color: #ccc !important;
+        }
+        /* Specific adjustments for results elements */
+        .results-container h1, .results-container h2, .results-container h3 {
+            background: none !important;
+            -webkit-background-clip: initial !important;
+            background-clip: initial !important;
+            color: #000 !important;
+        }
+        .results-container .text-slate-300,
+        .results-container .text-slate-400,
+        .results-container .text-slate-500 {
+            color: #333 !important;
+        }
+         .results-container .bg-slate-900\/70 {
+            background-color: #f8f9fa !important;
+            border: 1px solid #dee2e6 !important;
+        }
+        /* Recharts chart adjustments */
+        .recharts-wrapper .recharts-surface {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        .recharts-text, .recharts-cartesian-axis-tick-value tspan {
+            fill: #000 !important;
+        }
+        .recharts-cartesian-axis-line, .recharts-cartesian-grid-line {
+            stroke: #ccc !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai",
+    "recharts": "https://aistudiocdn.com/recharts@^3.2.1",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
